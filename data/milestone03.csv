@@ -1,0 +1,4 @@
+has_children,total_bookings,percent_canceled
+FALSE,110795,37.089218827564416
+TRUE,8590,36.39115250291036
+NA,4,100

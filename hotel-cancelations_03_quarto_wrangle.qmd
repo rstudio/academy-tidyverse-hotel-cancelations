@@ -1,0 +1,91 @@
+---
+title: "Wrangle rows and columns"
+format: html
+---
+
+# Instructions
+
+This week, you learned several more functions from the dplyr package (pronounced DEE-ply-er). These functions help you work with the rows and columns in your data set.
+
+You'll use these skills to investigate whether travellers with children are more (or less) likely to cancel their reservation.
+
+To learn more about the variables contained in the data set, refer to the data dictionary: https://rsacdn.link/milestones/internal/v2/hotel-cancelations/assets/hotels_dictionary.html
+
+# Milestone
+
+```{r}
+#| label: setup
+#| include: false
+
+# Load your packages here
+
+```
+
+## Create and select columns
+
+In this milestone, you'll create a new variable that notes whether a booking's guests included children. You'll then compute the cancelation rates for bookings with children and bookings without children.
+
+## Recreation
+
+### Part 1 - Import
+
+Before you begin, you will need to import your data set. Use the code chunk below to read the data from the data file `hotels.csv`, which is stored in the `data/` folder in your working directory. Be sure to save the data to an object named `hotels`.
+
+```{r}
+#| label: recreation-import
+
+```
+
+### Part 2 - Create and summarize
+
+Run the code below to see a table.
+
+```{r}
+#| label: recreate-this
+#| message: false
+solution <- readr::read_csv("data/milestone03.csv")
+solution
+```
+
+Your task is to use what you've learned about the dplyr package to transform `hotels` into this table. You will need to:
+
+1. Create a new column named `has_children`, which contains the result of a logical test
+2. Group the data by `has_children`
+3. Summarize the `total_bookings` and `percent_canceled` for each group
+
+Work in the code chunk below. Save the result as `children`.
+
+```{r}
+#| label: recreation-create
+
+```
+
+Run the following code chunk to test whether you have the same answer as the solution:
+
+```{r}
+#| label: compare
+#| eval: false
+waldo::compare(children, solution, tolerance = 1e-4)
+```
+
+Given the results shown in your table, do you think the presence of children will be a useful way to predict whether a booking is canceled?
+
+## Extension
+
+Using the code chunk below, investigate a single research question about this data, using the additional data wrangling skills you learned this week. Some ideas:
+
+1. Combine the number of weekend nights and number of weeknights to calculate the total duration of each booking. Then, explore the relationship between booking duration and other variables of interest.
+2. Which bookings only fell on weekends? Do weekend-only bookings differ from those that spanned weeknights?
+3. Based on the number of booking changes, divide the hotels data into groups of your choosing (e.g. low/medium/high volatility) and explore patterns based on these groups.
+4. [any other research question of interest]
+
+Alternately, working with a data set of your own, complete the following:
+
+1. Read in your data
+2. Create at least one new variable in your data set (using `mutate()` and/or `summarize()`), or use other dplyr functions to alter your data
+3. Use your updated data set to create at least one graph and/or table
+
+```{r}
+#| label: extension
+
+```

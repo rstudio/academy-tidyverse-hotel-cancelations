@@ -1,0 +1,91 @@
+---
+title: "Summarize data"
+format: html
+---
+
+# Instructions
+
+This week, you learned several new functions from dplyr (pronounced DEE-ply-er), a commonly-used package from the tidyverse for wrangling data. You also learned some new ways to enhance your plots.
+
+You'll use these skills to explore whether cancelation rates differ between city hotels and resorts.
+
+To learn more about the variables contained in the data set, refer to the data dictionary: https://rsacdn.link/milestones/internal/v2/hotel-cancelations/assets/hotels_dictionary.html
+
+# Milestone
+
+```{r}
+#| label: setup
+#| include: false
+
+# Load your packages here
+
+```
+
+## Summarize data
+
+In this milestone you'll group the data by type of hotel and then summarize the results to determine whether city hotels and resorts experience different cancelation rates.
+
+## Recreation
+
+### Part 1 - Import
+
+Before you begin, you will need to import your data set. Use the code chunk below to read the data from the data file `hotels.csv`, which is stored in the `data/` folder in your working directory. Be sure to save the data to an object named `hotels`.
+
+```{r}
+#| label: recreation-import
+
+```
+
+### Part 2 - Summarize data
+
+Run the code below to see a table.
+
+```{r}
+#| label: recreate-this
+#| message: false
+solution <- readr::read_csv("data/milestone02.csv")
+solution
+```
+
+Your task is to use what you've learned about the dplyr package to transform `hotels` into this table. You will need to:
+
+1. Group the data
+2. Summarize the `total_bookings` and `percent_canceled` for each group
+
+Hint: the `n()` function may prove useful for these types of summaries.
+
+Work in the code chunk below. Save the result as `hotel_types`.
+
+```{r}
+#| label: recreation-summary
+
+```
+
+Run the following code chunk to test whether you have the same answer as the solution:
+
+```{r}
+#| label: compare
+#| eval: false
+waldo::compare(hotel_types, solution, tolerance = 1e-4)
+```
+
+## Extension
+
+Using the code chunk below, investigate a single research question about this data, using the data wrangling skills you learned this week. Some ideas:
+
+1. Data visualization is often an easier way to see patterns than numbers in a table. Build a graph from your summary table to compare the cancelation rate of city hotels and resorts. Hint: investigate the difference between `geom_bar()` and `geom_col()`.
+2. How does cancelation vary by a different categorical variable of interest, e.g. deposit type or market segment?
+3. In the last milestone, we discovered a relationship between the lead time of a booking and the probability that it would be canceled. Is there an interaction between the type of the hotel and the lead time of a booking? Add `color = hotel` to your plot from the last milestone to find out.
+4. [any other research question of interest]
+
+Alternately, working with a data set of your own, complete the following:
+
+1. Read in your data
+2. Use `group_by()` and `summarize()` to produce simple a table from some subset of your data
+3. Create a related graph of this data subset using ggplot
+
+
+```{r}
+#| label: extension
+
+```

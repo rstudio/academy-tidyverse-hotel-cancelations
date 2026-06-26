@@ -1,0 +1,19 @@
+---
+title: Countries Data Dictionary
+output:
+  html_document:
+    theme: cerulean
+    css: https://rsacdn.link/teachthis/css/style.css
+---
+
+## The Countries Data
+
+This data set maps three-letter (ISO 3166-1 alpha-3) and two-letter (ISO 3166-1 alpha-2) country codes to country names. It can be joined to the `hotels` data set to identify the country of origin for each booking.
+
+### Variables: `countries.csv`
+
+`country_name`: Name of the country.
+
+`alpha_2`: Two-character country code (ISO 3166-1 alpha-2).
+
+`alpha_3`: Three-character country code (ISO 3166-1 alpha-3).
