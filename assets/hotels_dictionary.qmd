@@ -1,9 +1,8 @@
 ---
 title: Hotel Cancelations Data Dictionary
-output:
-  html_document:
-    theme: cerulean
-    css: https://rsacdn.link/teachthis/css/style.css
+format:
+  html:
+    embed-resources: true
 ---
 
 ## The Hotels Data
